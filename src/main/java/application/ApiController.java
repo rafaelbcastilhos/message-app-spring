@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import service.MessageService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -23,7 +24,7 @@ public class ApiController {
     // Gets messages
     @RequestMapping(value = "/populate", method = RequestMethod.GET)
     @ResponseBody
-    String getItems(HttpServletRequest request, HttpServletResponse response) {
+    List<MessageModel> getItems(HttpServletRequest request, HttpServletResponse response) {
         return messageService.getMessages();
     }
 
@@ -38,7 +39,7 @@ public class ApiController {
     //  Creates a new message
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    String addItems(HttpServletRequest request, HttpServletResponse response) {
+    List<MessageModel>  addItems(HttpServletRequest request, HttpServletResponse response) {
         String user = request.getParameter("user");
         String message = request.getParameter("message");
 
