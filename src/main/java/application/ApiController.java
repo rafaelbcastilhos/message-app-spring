@@ -39,7 +39,7 @@ public class ApiController {
     //  Creates a new message
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    List<MessageModel>  addItems(HttpServletRequest request, HttpServletResponse response) {
+    List<MessageModel> addItems(HttpServletRequest request, HttpServletResponse response) {
         String user = request.getParameter("user");
         String message = request.getParameter("message");
 
