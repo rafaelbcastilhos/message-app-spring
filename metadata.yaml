@@ -1,0 +1,17 @@
+---
+files:
+  - path: src/main/java/model/MessageModel.java
+    services:
+      - sqs
+  - path: src/main/java/service/MessageService.java
+    services:
+      - sqs
+  - path: src/main/java/service/SqsService.java
+    services:
+      - sqs
+  - path: src/main/java/application/ApiController.java
+    services:
+      - sqs
+  - path: src/main/java/application/Application.java
+    services:
+      - sqs
